@@ -3,6 +3,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* ===========================================================
+   设计风格：童话绘本闯关（Storybook Quest Map）
+   - 主色：国王金 #F6B935 / 王袍蓝 #3D6FE0
+   - 点缀：童话粉 #FF93B5 / 草地绿 #6BD18A
+   - 背景：羊皮纸米黄 #FFF6E1（带噪点）
+   - 字体：标题 ZCOOL KuaiLe + Baloo 2，正文 Nunito + 系统中文
+   =========================================================== */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -27,151 +35,263 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* 自定义品牌色 */
+  --color-king-gold: #f6b935;
+  --color-king-gold-deep: #e89a18;
+  --color-royal-blue: #3d6fe0;
+  --color-royal-blue-deep: #2a52b8;
+  --color-fairy-pink: #ff93b5;
+  --color-grass-green: #6bd18a;
+  --color-paper: #fff6e1;
+  --color-paper-deep: #fbe9c2;
+  --color-ink: #4a3416;
+
+  --font-display: "ZCOOL KuaiLe", "Baloo 2", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-body: "Nunito", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --font-en-display: "Baloo 2", "Nunito", sans-serif;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --primary: #f6b935;
+  --primary-foreground: #4a3416;
+  --radius: 1rem;
+  --background: #fff6e1;
+  --foreground: #4a3416;
+  --card: #ffffff;
+  --card-foreground: #4a3416;
+  --popover: #ffffff;
+  --popover-foreground: #4a3416;
+  --secondary: #fff1d0;
+  --secondary-foreground: #4a3416;
+  --muted: #fbe9c2;
+  --muted-foreground: #8a6a3a;
+  --accent: #ffe39a;
+  --accent-foreground: #4a3416;
+  --destructive: #e85a5a;
+  --destructive-foreground: #ffffff;
+  --border: #f0d8a8;
+  --input: #f0d8a8;
+  --ring: #f6b935;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
+  html, body {
+    font-family: var(--font-body);
+    color: var(--foreground);
   }
+  body {
+    background-color: var(--background);
+    /* 羊皮纸纹理：噪点 + 微小光斑 */
+    background-image:
+      radial-gradient(circle at 12% 18%, rgba(246, 185, 53, 0.18) 0, transparent 30%),
+      radial-gradient(circle at 88% 75%, rgba(255, 147, 181, 0.16) 0, transparent 35%),
+      radial-gradient(circle at 50% 50%, rgba(107, 209, 138, 0.10) 0, transparent 50%),
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.86 0 0 0 0 0.69 0 0 0 0 0.34 0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    background-attachment: fixed;
+    background-size: auto, auto, auto, 180px 180px;
+  }
+
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
   [type="button"]:not(:disabled),
   [type="submit"]:not(:disabled),
-  [type="reset"]:not(:disabled),
-  a[href],
-  select:not(:disabled),
-  input[type="checkbox"]:not(:disabled),
-  input[type="radio"]:not(:disabled) {
+  a[href] {
     @apply cursor-pointer;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-royal-blue-deep, #2a52b8);
+    letter-spacing: 0.02em;
   }
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
-
-  .flex {
-    min-height: 0;
-    min-width: 0;
-  }
-
   @media (min-width: 640px) {
-    .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
-      padding-right: 1.5rem;
-    }
+    .container { padding-left: 1.5rem; padding-right: 1.5rem; }
+  }
+  @media (min-width: 1024px) {
+    .container { padding-left: 2rem; padding-right: 2rem; max-width: 1280px; }
+  }
+  .flex { min-height: 0; min-width: 0; }
+
+  /* 羊皮纸卡片：厚实阴影+毛边描边 */
+  .paper-card {
+    background: #fffaf0;
+    border: 3px solid #4a3416;
+    border-radius: 1.4rem;
+    box-shadow:
+      0 6px 0 rgba(74, 52, 22, 0.95),
+      0 14px 30px rgba(74, 52, 22, 0.18);
+    position: relative;
+  }
+  .paper-card-soft {
+    background: #fffaf0;
+    border: 2px solid #d9b878;
+    border-radius: 1.2rem;
+    box-shadow:
+      0 4px 0 rgba(217, 184, 120, 0.6),
+      0 10px 25px rgba(74, 52, 22, 0.10);
   }
 
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 2rem; /* 32px - desktop padding */
-      padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
-    }
+  /* 主题大按钮：带厚底阴影、按下回弹 */
+  .btn-quest {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: #4a3416;
+    background: linear-gradient(180deg, #ffd166 0%, #f6b935 60%, #e89a18 100%);
+    border: 3px solid #4a3416;
+    border-radius: 999px;
+    padding: 0.9rem 2.2rem;
+    box-shadow: 0 6px 0 #b07300, 0 12px 24px rgba(74, 52, 22, 0.25);
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
   }
+  .btn-quest:hover { transform: translateY(-2px); box-shadow: 0 8px 0 #b07300, 0 16px 28px rgba(74, 52, 22, 0.28); }
+  .btn-quest:active { transform: translateY(4px); box-shadow: 0 2px 0 #b07300, 0 6px 14px rgba(74, 52, 22, 0.2); }
+
+  .btn-blue {
+    background: linear-gradient(180deg, #6f96ff 0%, #3d6fe0 60%, #2a52b8 100%);
+    color: #fff;
+    box-shadow: 0 6px 0 #1c3d8a, 0 12px 24px rgba(28, 61, 138, 0.3);
+  }
+  .btn-blue:hover { box-shadow: 0 8px 0 #1c3d8a, 0 16px 28px rgba(28, 61, 138, 0.35); }
+  .btn-blue:active { box-shadow: 0 2px 0 #1c3d8a, 0 6px 14px rgba(28, 61, 138, 0.25); }
+
+  .btn-pink {
+    background: linear-gradient(180deg, #ffb3ce 0%, #ff93b5 60%, #e57293 100%);
+    color: #4a3416;
+    box-shadow: 0 6px 0 #b3506e, 0 12px 24px rgba(179, 80, 110, 0.3);
+  }
+  .btn-pink:hover { box-shadow: 0 8px 0 #b3506e, 0 16px 28px rgba(179, 80, 110, 0.35); }
+  .btn-pink:active { box-shadow: 0 2px 0 #b3506e, 0 6px 14px rgba(179, 80, 110, 0.25); }
+
+  .btn-green {
+    background: linear-gradient(180deg, #95e8b1 0%, #6bd18a 60%, #45a868 100%);
+    color: #1f3d28;
+    box-shadow: 0 6px 0 #2f7a48, 0 12px 24px rgba(47, 122, 72, 0.3);
+  }
+  .btn-green:hover { box-shadow: 0 8px 0 #2f7a48, 0 16px 28px rgba(47, 122, 72, 0.35); }
+  .btn-green:active { box-shadow: 0 2px 0 #2f7a48, 0 6px 14px rgba(47, 122, 72, 0.25); }
+
+  /* 国王对话气泡 */
+  .king-bubble {
+    position: relative;
+    background: #fffaf0;
+    border: 3px solid #4a3416;
+    border-radius: 1.4rem;
+    padding: 1rem 1.4rem;
+    box-shadow: 0 6px 0 rgba(74, 52, 22, 0.9), 0 14px 30px rgba(74, 52, 22, 0.18);
+    color: #4a3416;
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .king-bubble::before {
+    content: "";
+    position: absolute;
+    left: -22px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-right: 22px solid #4a3416;
+  }
+  .king-bubble::after {
+    content: "";
+    position: absolute;
+    left: -16px;
+    top: 33px;
+    width: 0;
+    height: 0;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    border-right: 18px solid #fffaf0;
+  }
+
+  /* 百数表格子 */
+  .num-cell {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fffaf0;
+    border: 2px solid #c9a268;
+    border-radius: 0.6rem;
+    font-family: var(--font-en-display);
+    font-weight: 700;
+    color: #4a3416;
+    font-size: clamp(0.7rem, 1.3vw, 1.1rem);
+    transition: transform 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+    user-select: none;
+  }
+  .num-cell:hover { transform: translateY(-2px) scale(1.05); border-color: #f6b935; z-index: 2; }
+  .num-cell.h-row { background: linear-gradient(180deg, #ffc7da, #ff93b5); border-color: #d9648a; color: #6b2240; }
+  .num-cell.h-col { background: linear-gradient(180deg, #b8e9c7, #6bd18a); border-color: #2f7a48; color: #1f3d28; }
+  .num-cell.h-diag { background: linear-gradient(180deg, #ffd99c, #f6b935); border-color: #b07300; color: #4a3416; }
+  .num-cell.h-diag-pink { background: linear-gradient(180deg, #ffc7da, #ff93b5); border-color: #d9648a; color: #6b2240; }
+
+  /* 国王呼吸 */
+  @keyframes king-breath {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+  }
+  .king-breath { animation: king-breath 4.2s ease-in-out infinite; }
+
+  /* 漂浮 */
+  @keyframes float-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .float-y { animation: float-y 3.5s ease-in-out infinite; }
+
+  /* 摇晃 */
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-3deg); }
+    75% { transform: rotate(3deg); }
+  }
+  .wiggle { animation: wiggle 0.5s ease-in-out; }
+
+  /* 弹入 */
+  @keyframes pop-in {
+    0% { transform: scale(0.6); opacity: 0; }
+    60% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1); }
+  }
+  .pop-in { animation: pop-in 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+
+  /* 标签徽章 */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    border: 2px solid #4a3416;
+    background: #fffaf0;
+    color: #4a3416;
+    box-shadow: 0 3px 0 rgba(74, 52, 22, 0.85);
+  }
+  .chip-gold { background: linear-gradient(180deg, #ffd166, #f6b935); }
+  .chip-blue { background: linear-gradient(180deg, #6f96ff, #3d6fe0); color: #fff; }
+  .chip-pink { background: linear-gradient(180deg, #ffb3ce, #ff93b5); }
+  .chip-green { background: linear-gradient(180deg, #95e8b1, #6bd18a); }
 }

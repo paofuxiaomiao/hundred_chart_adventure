@@ -4,36 +4,39 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { ProgressProvider } from "./contexts/ProgressContext";
 import Home from "./pages/Home";
-
+import Explore from "./pages/Explore";
+import Level1 from "./pages/Level1";
+import Level2 from "./pages/Level2";
+import Level3 from "./pages/Level3";
+import Ending from "./pages/Ending";
 
 function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
+      <Route path={"/explore"} component={Explore} />
+      <Route path={"/level1"} component={Level1} />
+      <Route path={"/level2"} component={Level2} />
+      <Route path={"/level3"} component={Level3} />
+      <Route path={"/ending"} component={Ending} />
       <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
-
 function App() {
   return (
     <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
+      <ThemeProvider defaultTheme="light">
+        <ProgressProvider>
+          <TooltipProvider>
+            <Toaster />
+            <Router />
+          </TooltipProvider>
+        </ProgressProvider>
       </ThemeProvider>
     </ErrorBoundary>
   );
